@@ -18,7 +18,7 @@ const ExplainedDetails = () => {
           Click here for detailed setup guide {isVisible ? '⬇️' : '⬅️'}
         </p>
         {isVisible && (
-          <div className="items-center justify-center flex flex-col mt-4 w-4/6 border p-2 m-auto text-pretty text-center gap-1">
+          <div className="items-center justify-center flex flex-col mt-4 w-10/12 border p-2 m-auto text-pretty text-center gap-1">
             <span className="underline mb-6">
               Longer and harder way to set up this project
             </span>
@@ -64,12 +64,14 @@ const ExplainedDetails = () => {
 
             <hr className="bg-white w-10/12 mt-6 mb-6" />
             <span className="underline mb-6">
-              Shorter and easier way to setup this project
+              Shorter and easier way to set up this project
             </span>
             <li>
               If you prefer not to clone my project and upload it to a separate
               repository, you have alternative option. You can create your own
               API route named 'github-webhook' (e.g., /api/github-webhook).
+            </li>
+            <li className="w-10/12">
               Then, simply copy content from my 'route.ts' file and paste it in
               your API route. Afterward, continue with the remaining steps, such
               as obtaining the Discord WebHook and configuring the GitHub
