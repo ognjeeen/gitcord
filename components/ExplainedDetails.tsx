@@ -15,11 +15,11 @@ const ExplainedDetails = () => {
           onClick={handleToggle}
           className="cursor-pointer text-white text-center"
         >
-          Click here for detailed setup guide {isVisible ? '⬇️' : '⬅️'}
+          Click here for detailed set up guide {isVisible ? '⬇️' : '⬅️'}
         </p>
         {isVisible && (
           <div className="items-center justify-center flex flex-col mt-4 w-10/12 border p-2 m-auto text-pretty text-center gap-1">
-            <span className="underline mb-6">
+            <span className="underline mb-4">
               Longer and harder way to set up this project
             </span>
             <li>Clone my repository from GitHub</li>
@@ -50,20 +50,21 @@ const ExplainedDetails = () => {
             </li>
             <li>
               In payload URL paste your domain URL and at the end put -
-              /api/github-webhook (e.g https://example.com/api/github-webhook)
+              /api/github-webhook (e.g., https://example.com/api/github-webhook)
             </li>
             <li>
-              For Content type select 'application/json', everything else leave
-              as it is set by default
+              For Content type select 'application/json', leave everything else
+              as default
             </li>
             <li>
               In 'Recent Deliveries' you can check if your webhook is connected
-              properly. You can also see GitHub payload
+              properly. GitHub will ping (send a payload to your API route).
+              There you can also see how the GitHub payload looks.
             </li>
             <li>Save everything and you are good to go!</li>
 
-            <hr className="bg-white w-10/12 mt-6 mb-6" />
-            <span className="underline mb-6">
+            <hr className="bg-white w-10/12 mt-4 mb-4" />
+            <span className="underline mb-4">
               Shorter and easier way to set up this project
             </span>
             <li>
@@ -78,8 +79,8 @@ const ExplainedDetails = () => {
               Webhook.
             </li>
 
-            <hr className="bg-white w-10/12 mt-6 mb-6" />
-            <span className="underline mb-6">NOTES! IMPORTANT!</span>
+            <hr className="bg-white w-10/12 mt-4 mb-4" />
+            <span className="underline mb-4">NOTES! IMPORTANT!</span>
             <p>
               Your first payload sent from GitHub will{' '}
               <span className="text-red-500 font-bold underline">
@@ -87,18 +88,19 @@ const ExplainedDetails = () => {
               </span>
               . This is expected, as there are typically no commits during the
               initial setup. Don't worry. Inside the route, I've included a
-              message to handle this scenario. You will probably find that
-              message in the 'Response' tab. Next commit should go trough and
-              give you 200 status code.
+              message to handle this scenario. You will find that message in the
+              'Response' tab. Next commit should go through and give you{' '}
+              <span className="text-green-500 font-bold underline">
+                response 200
+              </span>{' '}
+              with message "Webhook received" inside body.
             </p>
-            <p>
+            <p className="mt-4 mb-4">
               This is simply my personal project, so any potential damage caused
               to your GitHub account or Discord server is your responsibility! I
-              hold no liability for such occurrences!
-            </p>
-            <p>
-              If you have any inquiries or encounter any issues, feel free to
-              reach out to me via Discord - M0xei.
+              hold no liability for such occurrences! If you have any inquiries
+              or encounter any issues, feel free to reach out to me via Discord
+              - M0xei.
             </p>
           </div>
         )}
